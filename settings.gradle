@@ -1,1 +1,3 @@
 rootProject.name = 'withme'
+include 'api'
+include 'rds-core'
