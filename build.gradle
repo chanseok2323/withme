@@ -20,9 +20,19 @@ subprojects {
 		mavenCentral()
 	}
 
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
+
+
 	dependencies {
 		compileOnly 'org.projectlombok:lombok'
+		compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
+
 		annotationProcessor 'org.projectlombok:lombok'
+		testCompileOnly 'org.projectlombok:lombok'
 	}
 
 	tasks.named('test') {
@@ -33,10 +43,21 @@ subprojects {
 project(':api') {
 	dependencies {
 		implementation project(':rds-core')
+		implementation project(':web-core')
 	}
+}
+
+project(':web-core') {
+	bootJar { enabled = false }
+	jar { enabled = true }
 }
 
 project(':rds-core') {
 	bootJar { enabled = false }
 	jar { enabled = true }
+}
+
+project(':redis-core') {
+	bootJar { enabled = false }
+	jar {enabled = true}
 }

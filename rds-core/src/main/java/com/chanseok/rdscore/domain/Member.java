@@ -1,6 +1,7 @@
 package com.chanseok.rdscore.domain;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
@@ -18,4 +19,10 @@ public class Member extends BaseEntity {
 
     private String provider;
 
+    @Builder
+    public Member(String email, String nickname, String provider) {
+        this.email = email;
+        this.nickname = nickname;
+        this.provider = provider;
+    }
 }

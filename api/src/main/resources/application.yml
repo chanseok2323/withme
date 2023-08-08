@@ -31,3 +31,10 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+
+study-with-me:
+  token:
+    secret-key: studywithme2312321w23213r323213213eqwwxlqwweqw
+    expiration: 1800000       # 30 minute
+    refresh-token:
+      expiration: 604800000   # 7 days

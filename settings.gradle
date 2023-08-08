@@ -1,3 +1,5 @@
 rootProject.name = 'withme'
 include 'api'
 include 'rds-core'
+include 'redis-core'
+include 'web-core'
