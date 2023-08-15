@@ -1,4 +1,9 @@
 spring:
+  profiles:
+    include:
+      - rds
+      - redis
+
   security:
     oauth2:
       client:
@@ -18,19 +23,6 @@ spring:
             user-info-uri: https://kapi.kakao.com/v2/user/me
             user-info-authentication-method: POST
             user-name-attribute: id
-
-  datasource:
-    url: jdbc:mysql://localhost:3306/withme
-    username: withme
-    password: tjr72902!!
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        show_sql: true
-        format_sql: true
 
 study-with-me:
   token:

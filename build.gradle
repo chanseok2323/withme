@@ -8,6 +8,7 @@ subprojects {
 	apply plugin: 'java-library'
 	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'java-test-fixtures'
 
 	group = 'com.chanseok'
 	version = '0.0.1-SNAPSHOT'
@@ -43,6 +44,7 @@ subprojects {
 project(':api') {
 	dependencies {
 		implementation project(':rds-core')
+		implementation project(':redis-core')
 		implementation project(':web-core')
 	}
 }

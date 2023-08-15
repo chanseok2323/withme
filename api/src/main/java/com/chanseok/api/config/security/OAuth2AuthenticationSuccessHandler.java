@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
@@ -35,7 +37,6 @@ public class OAuth2AuthenticationSuccessHandler implements AuthenticationSuccess
         if(findByMember == null) {
             memberRepository.save(Member.builder()
                                             .email(oAuthAttributes.getEmail())
-                                            .provider(oAuthAttributes.getRegistrationId())
                                         .build());
         }
 

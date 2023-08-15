@@ -7,6 +7,7 @@ dependencies {
     annotationProcessor 'com.querydsl:querydsl-apt:5.0.0:jakarta'
 
     runtimeOnly 'com.mysql:mysql-connector-j'
+    testFixturesRuntimeOnly 'com.h2database:h2'
 }
 
 clean {
